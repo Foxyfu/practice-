@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             int a = 1;
-            Console.WriteLine(a);
+            Console.WriteLine("Салам");
 
         }
     }
