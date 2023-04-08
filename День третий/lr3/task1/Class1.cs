@@ -25,8 +25,8 @@ namespace task1
 
         public ClassA(int a, int b)
         {
-            this.a = a;
-            this.b = b;
+            _a = a;
+            _b = b;
         }
 
         public double Сalculation(int a, int b)

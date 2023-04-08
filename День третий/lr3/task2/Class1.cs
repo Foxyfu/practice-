@@ -37,7 +37,7 @@ namespace task2
         }
         public Product(int price, int yearManufacture):base(price) 
         {
-            _yearManufacture=yearManufacture;
+            _yearManufacture = yearManufacture;
         }
 
         public override string ToString()
