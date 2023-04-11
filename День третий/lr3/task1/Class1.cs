@@ -42,7 +42,7 @@ namespace task1
 
         public void Print(int a,int b)
         {
-            Console.WriteLine("Вычесление равно: " + Сalculation(a, b));
+            Console.WriteLine("Вычисление равно: " + Сalculation(a, b));
             Console.WriteLine("Сумма квадратов равна:" + SquaringSum(a,b));
         }
     }

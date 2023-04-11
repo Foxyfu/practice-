@@ -7,8 +7,11 @@
             Polynomial p1 = new Polynomial(2, 3, 1);
             Polynomial p2 = new Polynomial(-1, 5, 2);
 
+            Console.WriteLine("Введите х:");
+            int x = int.Parse(Console.ReadLine());
+
             // Вычисление значения многочлена для заданного аргумента
-            Console.WriteLine("Значение многочлена p1 при x=2: {0}", p1.Evaluate(2));
+            Console.WriteLine($"Значение многочлена p1 при x= {x}: {p1.Evaluate(x)}");
 
             // Сложение многочленов
             Polynomial p3 = p1 + p2;
