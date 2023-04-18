@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Train[] train = new Train[8];
-            for(int i = 0; i < train.Length ; i++)
+            for (int i = 0; i < train.Length ; i++)
             {
                 Console.WriteLine("Введите пунтк назначения: ");
                 train[i].Destination = Console.ReadLine();

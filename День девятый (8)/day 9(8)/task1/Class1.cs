@@ -35,5 +35,10 @@ namespace task1
             _number = number;
             _time = time;
         }
+
+       /* public override string ToString()
+        {
+            return $"gfgfd"
+        }*/
     }
 }
