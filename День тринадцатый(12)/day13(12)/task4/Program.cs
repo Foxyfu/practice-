@@ -10,7 +10,7 @@
 
             for (int i = 0; i < delegates.Length; i++)
             {
-                delegates[i] = new RandomInt(() => new Random().Next(1, 100));
+                delegates[i] = new RandomInt(() => new Random().Next(1, 20));
             }
 
             Func<RandomInt[], double> averageDelegate = delegate (RandomInt[] dels)
@@ -19,7 +19,7 @@
                 foreach (RandomInt del in dels)
                 {
                     sum += del.Invoke();
-                    Console.WriteLine(del.Invoke());
+                    Console.WriteLine($"{sum}");
                 }
 
                 return (double)sum / dels.Length;
