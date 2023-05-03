@@ -22,7 +22,11 @@
             }
             
         }
-
+        /// <summary>
+        /// поиск Y
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
         static double SearchY(double x)
         {
             double y ;

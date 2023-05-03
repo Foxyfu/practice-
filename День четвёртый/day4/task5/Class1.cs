@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace task5
 {
+    /// <summary>
+    /// это кстати записная книжка
+    /// </summary>
     internal class Notebook
     {
         private List<Record> _records;
@@ -57,6 +60,9 @@ namespace task5
 
     }
 
+    /// <summary>
+    /// Класс реализующий запись человека
+    /// </summary>
     class Record
     {
         private string _name;

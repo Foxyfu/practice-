@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace task_4
 {
+    /// <summary>
+    /// создание 2д массива
+    /// </summary>
     internal class Array2D
     {
         private double[,] _array;
@@ -35,6 +38,11 @@ namespace task_4
             _column = column;
         }
 
+        /// <summary>
+        /// генерация массива
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
         public void GenerateArray(int from, int to)
         {
             Random random = new Random();
