@@ -2,84 +2,102 @@
 {
     using System;
 
-    // Абстрактный класс состояния
-    abstract class State
-    {
-        public abstract void HandleState();
-    }
-
-    // Конкретные классы состояний
-    class State1 : State
-    {
-        public override void HandleState()
-        {
-            Console.WriteLine("Обработка состояния 1");
-        }
-    }
-
-    class State2 : State
-    {
-        public override void HandleState()
-        {
-            Console.WriteLine("Обработка состояния 2");
-        }
-    }
-
-    class State3 : State
-    {
-        public override void HandleState()
-        {
-            Console.WriteLine("Обработка состояния 3");
-        }
-    }
-
     // Контекст
-    class Context
+    public class Context
     {
-        private State currentState;
+        private IState state;
 
-        public void SetState(State state)
+        public Context()
         {
-            currentState = state;
+            // Инициализация начального состояния
+            state = new State1();
         }
 
-        public void PerformAction()
+        public void SetState(IState state)
         {
-            currentState.HandleState();
+            this.state = state;
+        }
+
+        public void Request()
+        {
+            state.Handle(this);
         }
     }
 
-    class Program
+    // Абстрактное состояние
+    public interface IState
     {
-        static void Main(string[] args)
+        void Handle(Context context);
+    }
+
+    // Конкретные состояния
+    public class State1 : IState
+    {
+        public void Handle(Context context)
         {
-            // Создание экземпляров состояний
-            State state1 = new State1();
-            State state2 = new State2();
-            State state3 = new State3();
+            Console.WriteLine("Состояние 1");
+            // Логика для состояния 1
 
-            // Получение порядкового номера и вычисление варианта
-            int порядковый_номер = 7;
-            int вариант = (порядковый_номер % 3) + 1;
+            // Переход к следующему состоянию
+            context.SetState(new State2());
+        }
+    }
 
-            // Создание контекста с соответствующим состоянием
+    public class State2 : IState
+    {
+        public void Handle(Context context)
+        {
+            Console.WriteLine("Состояние 2");
+            // Логика для состояния 2
+
+            // Переход к следующему состоянию
+            context.SetState(new State3());
+        }
+    }
+
+    public class State3 : IState
+    {
+        public void Handle(Context context)
+        {
+            Console.WriteLine("Состояние 3");
+            // Логика для состояния 3
+
+            // Переход к следующему состоянию
+            context.SetState(new State1()); // Здесь можно изменить логику перехода на следующее состояние, если необходимо
+        }
+    }
+
+    // Пример использования
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            // Вычисление варианта
+            Console.WriteLine("Введите порядковый номер");
+            int NP =int.Parse(Console.ReadLine()) ;
+            int variant = (NP % 3) + 1;
+
+            // Создание контекста
             Context context = new Context();
-            if (вариант == 1)
+
+            // Установка начального состояния в соответствии с вариантом
+            switch (variant)
             {
-                context.SetState(state1);
-            }
-            else if (вариант == 2)
-            {
-                context.SetState(state2);
-            }
-            else
-            {
-                context.SetState(state3);
+                case 1:
+                    context.SetState(new State1());
+                    break;
+                case 2:
+                    context.SetState(new State2());
+                    break;
+                case 3:
+                    context.SetState(new State3());
+                    break;
             }
 
-            // Выполнение действия в зависимости от состояния
-            context.PerformAction();
+            // Выполнение запросов
+            context.Request();
         }
     }
+
 
 }
