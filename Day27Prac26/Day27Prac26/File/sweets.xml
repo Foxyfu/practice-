@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sweet>
+	<sweet1>
+		<TypeSweet>Chocolate</TypeSweet>
+		<TypeFrill>	Foil</TypeFrill>
+		<Price>23</Price>
+	</sweet1>
+	<sweet2>
+		<TypeSweet>	Candy</TypeSweet>
+		<TypeFrill>	Paper</TypeFrill>
+		<Price>	45	</Price>
+	</sweet2>
+	
+</sweet>
