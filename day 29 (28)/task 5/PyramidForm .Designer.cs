@@ -1,4 +1,4 @@
-﻿namespace task1
+﻿namespace task_5
 {
     partial class Form1
     {
@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 529);
+            ClientSize = new Size(800, 450);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);

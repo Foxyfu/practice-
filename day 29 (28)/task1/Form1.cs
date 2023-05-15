@@ -8,27 +8,27 @@ namespace task1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        protected override void OnPaint(PaintEventArgs e)
         {
-            Graphics g = this.CreateGraphics();
-            Pen p = new Pen(Color.Blue);
-            int radius = 200;
-            int x = Width / 2;
-            int y = Height / 2;
+            base.OnPaint(e);
 
+            Graphics graphics = e.Graphics;
+            Pen blackPen = new Pen(Color.Black);
 
-            int first_point1 = (int)(Math.Cos(0) * radius + x);
-            int first_point2 = (int)(Math.Sin(0) * radius + y);
+            // Вычисление координат и радиуса для внешнего круга
+            int x = ClientSize.Width / 2;
+            int y = ClientSize.Height / 2;
+            int radius = Math.Min(ClientSize.Width/2, ClientSize.Height/2) / 2;
 
-            Point p1 = new Point(first_point1, first_point2);
-            for (int i = 1; i < 500; i++)
-            {
-                int dx = (int)(Math.Cos(i) * radius + x);
-                int dy = (int)(Math.Sin(i) * radius + y);
-                Point p2 = new Point(dx, dy);
-                g.DrawLine(p, p1, p2);
-                p1 = p2;
-            }
+            // Рисование внешнего круга
+            graphics.DrawEllipse(blackPen, x - radius, y - radius, radius * 2, radius * 2);
+
+            // Вычисление координат и радиуса для внутреннего круга
+            int innerRadius = radius / 2;
+
+            // Рисование внутреннего круга
+            graphics.DrawEllipse(blackPen, x - innerRadius, y - innerRadius, innerRadius * 2, innerRadius * 2);
+            graphics.DrawEllipse(blackPen, x - innerRadius/2, y - innerRadius/2, innerRadius, innerRadius);
         }
     }
 }
