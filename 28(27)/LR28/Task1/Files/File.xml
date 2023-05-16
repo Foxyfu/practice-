@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<record>
+  <record surname="федосевич">
+    <birthday>02.02.2004</birthday>
+    <phone>336564506</phone>
+  </record>
+  <record surname="Древний">
+    <birthday>09.11.2022</birthday>
+    <phone>337846534</phone>
+  </record>
+  <record surname="Зайцев">
+    <birthday>01.01.2000</birthday>
+    <phone>0101777</phone>
+  </record>
+</record>

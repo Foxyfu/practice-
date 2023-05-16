@@ -1,0 +1,29 @@
+﻿<Window x:Class="Task1.AddRecordForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task1"
+        mc:Ignorable="d"
+        Title="AddRecordForm" Height="223" Width="273">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.9*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Content="Фамилия" Grid.Row="0" Grid.Column="0" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <TextBox x:Name="SurnameTBox" Grid.Row="0" Grid.Column="1" Margin="10"></TextBox>
+        <Label Content="Телефон" Grid.Row="1" Grid.Column="0" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <TextBox x:Name="PhoneTBox" Grid.Row="1" Grid.Column="1" Margin="10"></TextBox>
+        <Label Content="Дата рождения" Grid.Row="2" Grid.Column="0" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <DatePicker x:Name="BirthdayPicker" Grid.Row="2" Grid.Column="1" Margin="10"></DatePicker>
+        <Button Grid.Row="3" Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Отмена" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_1" Width="100"/>
+    </Grid>
+</Window>
